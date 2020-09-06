@@ -15,14 +15,14 @@ class HomeViewModel @ViewModelInject constructor(
     fun getItems(): Single<List<TodoItem>> {
         return getAllTodo.execute().map { todoList ->
             val list: List<TodoItem> = todoList.map { todo ->
-                SimpleItem.ItemView.Data(title = todo.title, isCompleted = todo.isCompleted)
+                SimpleItem(title = todo.title, isCompleted = todo.isCompleted)
             }
 
             val addedList = list.toMutableList()
             addedList.addAll(
                 listOf(
-                    SimpleItemWithDescription.ItemView.Data(title = "xxxxx", isCompleted = false),
-                    SimpleItem.ItemView.Data(title = "yyy", isCompleted = false)
+                    SimpleItemWithDescription(title = "xxxxx", isCompleted = false),
+                    SimpleItem(title = "yyy", isCompleted = false)
                 )
             )
 

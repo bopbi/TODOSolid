@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import com.bobbyprabowo.todosolid.R
 import com.bobbyprabowo.todosolid.home.TodoListAdapter
 import com.bobbyprabowo.todosolid.home.TodoViewHolderFactory
-import com.bobbyprabowo.todosolid.home.viewholder.ViewHolderType
 import com.bobbyprabowo.todosolid.home.viewholder.SimpleTodoItemViewHolder
+import com.bobbyprabowo.todosolid.home.viewholder.ViewHolderType
 import com.bobbyprabowo.todosolid.model.SimpleItem
 import com.bobbyprabowo.todosolid.model.TodoItem
 
@@ -26,7 +26,7 @@ open class SimpleTodoViewHolderFactory : TodoViewHolderFactory {
     }
 
     override fun getItemViewType(todoItem: TodoItem): Int {
-        if (todoItem is SimpleItem.ItemView.Data) {
+        if (todoItem is SimpleItem) {
             return ViewHolderType.SIMPLE.ordinal
         } else {
             throw Throwable("Wrong Item Type")

@@ -1,10 +1,3 @@
 package com.bobbyprabowo.todosolid.model
 
-sealed class SimpleItemWithDescription : TodoItem {
-
-    sealed class ItemView : SimpleItemWithDescription() {
-
-        data class Data(val title: String, val isCompleted: Boolean): ItemView()
-
-    }
-}
+data class SimpleItemWithDescription(val title: String, val isCompleted: Boolean) : TodoItem
