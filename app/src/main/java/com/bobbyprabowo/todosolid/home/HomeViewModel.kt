@@ -3,6 +3,7 @@ package com.bobbyprabowo.todosolid.home
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.bobbyprabowo.todosolid.domain.GetAllTodo
+import com.bobbyprabowo.todosolid.model.Divider
 import com.bobbyprabowo.todosolid.model.SimpleItem
 import com.bobbyprabowo.todosolid.model.SimpleItemWithDescription
 import com.bobbyprabowo.todosolid.model.TodoItem
@@ -21,6 +22,7 @@ class HomeViewModel @ViewModelInject constructor(
             val addedList = list.toMutableList()
             addedList.addAll(
                 listOf(
+                    Divider(),
                     SimpleItemWithDescription(title = "xxxxx", isCompleted = false),
                     SimpleItem(title = "yyy", isCompleted = false)
                 )
